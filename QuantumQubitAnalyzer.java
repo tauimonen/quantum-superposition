@@ -40,19 +40,19 @@ public class QuantumQubitAnalyzer {
          */
 
         // Experiment A: Single photon measured multiple times
-        /*
-        QuantumQubitAnalyzer photon = new QuantumQubitAnalyzer(90);
+
+/*        QuantumQubitAnalyzer photon = new QuantumQubitAnalyzer(90);
         for (int i = 0; i < 5; i++) {
             System.out.println(photon.performMeasurement(45));
-        }
-        */
+        }*/
+
 
         // Experiment B: Statistical analysis over multiple measurements
-        int alignedCount = 0;
+       int alignedCount = 0;
         int antiAlignedCount = 0;
 
         for (int i = 0; i < 1000; i++) {
-            QuantumQubitAnalyzer photon = new QuantumQubitAnalyzer(30);
+            QuantumQubitAnalyzer photon = new QuantumQubitAnalyzer(45);
             if (photon.performMeasurement(90)) {
                 alignedCount++;
             } else {
