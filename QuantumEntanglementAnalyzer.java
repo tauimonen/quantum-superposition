@@ -164,15 +164,22 @@ public class QuantumEntanglementAnalyzer {
     public static void main(String[] args)
     {
         //Compute probabilities. But we don't make any measurement. So the Photon state is not changed.
-        QuantumEntanglementAnalyzer pairPrediction = new QuantumEntanglementAnalyzer(0.707106, 0, 0, 0.707106);
-        pairPrediction.setMeasurementAngles(90,90);
+
+        // Entangled state
+/*        QuantumEntanglementAnalyzer pairPrediction = new QuantumEntanglementAnalyzer(0, 0.707106, -0.707106, 0);
+        pairPrediction.setMeasurementAngles(-45,45); */
+
+        // Un-entangled state, photons independent each other
+        QuantumEntanglementAnalyzer pairPrediction = new QuantumEntanglementAnalyzer(0.75, 0.433, 0.433, 0.25);
+        pairPrediction.setMeasurementAngles(60,60);
+
         pairPrediction.reportMeasurementProbability();
 
         //Perform some measurements. Measurements will change the photon states.
         for(int i=0;i<100;i++)
         {
-            QuantumEntanglementAnalyzer pairExperiment = new QuantumEntanglementAnalyzer(0.707106, 0, 0, 0.707106);
-            pairExperiment.setMeasurementAngles(90,90);
+            QuantumEntanglementAnalyzer pairExperiment = new QuantumEntanglementAnalyzer(0.75, 0.433, 0.433, 0.25);
+            pairExperiment.setMeasurementAngles(60,60);
             pairExperiment.performMeasurement();
         }
     }
