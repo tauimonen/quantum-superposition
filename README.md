@@ -63,11 +63,90 @@ java QuantumEntanglementAnalyzer
 java QuantumQubitAnalyzer
 ```
 
-## Applications
-This simulation can be used for:
-- **Educational purposes**: Understanding quantum mechanics and measurement principles.
-- **Research support**: Analyzing entangled photon interactions.
-- **Algorithm testing**: Validating quantum computing algorithms before implementing them on quantum hardware.
+# 🧠 Understanding Qubits via Photon Polarization
+
+This README explains how qubits are represented using photon polarization, how measurement works at various angles, and how entanglement influences outcomes—even after measurement.
+
+---
+
+##  Qubits as Photon Polarization
+
+In this simulation, **qubits are encoded as the polarization of photons**. That is, the orientation of a photon's electric field vector corresponds to the quantum state.
+
+We define the qubit value based on whether the photon’s polarization is **aligned** or **anti-aligned** with a **measurement filter**.
+
+---
+
+## Measurement Convention
+
+### Measurement at **90°**
+
+When a polarizer is set at **90 degrees**, the rule is:
+
+- ✅ **Aligned with polarizer** → `Qubit = 1`
+- ❌ **Anti-aligned (orthogonal)** → `Qubit = 0`
+
+This is our **reference basis**.
+
+---
+
+### Measurement at **Other Angles**
+
+If the measurement filter is set to another angle (e.g., 0°, 45°, etc.):
+
+- ✅ **Photon aligned with the filter** → `1`
+- ❌ **Photon anti-aligned with the filter** → `0`
+
+The outcome still follows the **same rule**, but now "alignment" is judged **relative to the new angle**.
+
+---
+
+## Entanglement & Measurement
+
+When two photons are **entangled**, their polarizations are **quantum-correlated**:
+
+- Measuring one photon **instantly affects** the expected result of the other, even at a distance.
+- However, **once a measurement is made**, the entanglement is **broken**.
+- Despite this, the **statistical outcomes** of repeated trials **reflect the influence** of the previous entanglement.
+
+---
+
+## 🧪 Summary
+
+| Scenario                          | Outcome                          |
+|----------------------------------|----------------------------------|
+| Aligned @ 90°                    | Qubit = 1                        |
+| Anti-aligned @ 90°               | Qubit = 0                        |
+| Aligned @ any angle              | Qubit = 1                        |
+| Anti-aligned @ any angle         | Qubit = 0                        |
+| Entangled photons, same angle    | Correlated outcomes              |
+| Entangled, then measured         | Entanglement breaks on measure  |
+| Post-measurement                 | Correlation visible in results   |
+
+---
+
+## Visual Diagram
+
+```plaintext
+               +--------------------------+
+               |     Photon Polarization |
+               |          (e.g. ↕)       |
+               +-----------+--------------+
+                           |
+                           v
+               +--------------------------+
+               |    Polarizing Filter     |
+               |   (e.g. at 90° or 45°)   |
+               +-----------+--------------+
+                           |
+         +----------------+----------------+
+         |                                 |
+         v                                 v
+   Aligned with Filter              Anti-aligned
+       (Passes)                         (Blocked)
+         ↓                                 ↓
+     Output: 1                         Output: 0
+
 
 ## License
 This project is provided under the MIT License. Feel free to modify and distribute it as needed.
