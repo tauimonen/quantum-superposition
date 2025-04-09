@@ -65,7 +65,7 @@ java QuantumQubitAnalyzer
 
 # 🧠 Understanding Qubits via Photon Polarization
 
-This README explains how qubits are represented using photon polarization, how measurement works at various angles, and how entanglement influences outcomes—even after measurement.
+This explains how qubits are represented using photon polarization, how measurement works at various angles, and how entanglement influences outcomes—even after measurement.
 
 ---
 
