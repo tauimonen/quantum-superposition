@@ -13,7 +13,12 @@ public class QuantumEntanglementAnalyzer {
         return val * val;
     }
 
-    // Variables representing the quantum state amplitudes of the photons.
+    /* Amplitudes representing the quantum state of a two-qubit system.
+    The quantum state |ψ⟩ is expressed as: |ψ⟩ = a|00⟩ + b|01⟩ + c|10⟩ + d|11⟩
+    Each variable (a, b, c, d) is the probability amplitude for the corresponding basis state.
+    The probability of measuring a particular state is the square of its amplitude's magnitude:
+    a = sqrt(P(00)), b = sqrt(P(01)), c = sqrt(P(10)), d = sqrt(P(11))
+    The total probability must be normalized: |a|² + |b|² + |c|² + |d|² = 1 */
     private double a, b, c, d;
 
     // Constructor to initialize the quantum state based on given amplitudes.
@@ -128,7 +133,10 @@ public class QuantumEntanglementAnalyzer {
 
     public static void main(String[] args) {
         QuantumEntanglementAnalyzer simulation = new QuantumEntanglementAnalyzer(0.707, 0, 0, 0.707);
+
+        // One measuring apparatus per photon, so two angles
         simulation.setAngles(90, 90);
+
         simulation.reportProbabilities();
 
         for (int i = 0; i < 100; i++) {
